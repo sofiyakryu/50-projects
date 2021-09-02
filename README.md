@@ -2,11 +2,17 @@
 
 This is a repo set for a purely project-based course. It includes 50 mini projects in HTML, CSS & JavaScript that relate to the DOM (Document Object Model).
 
-# Boilerplate
+## Getting started
+
+### Boilerplate
 
 The _project_starter_ folder is used as a boilerplate that can be copied/duplicated to go right ahead into the project development.
 
-# List of projects
+### To run the project
+
+To open one of the projects, you can eather open index.html in the folder where it lives, but you can also use Live Server (a VS code extension that let you run your project on your localhost).
+
+## List of projects
 
 Expanding Cards
 
