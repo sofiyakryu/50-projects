@@ -5,6 +5,14 @@ textarea.focus();
 
 textarea.addEventListener("keyup", (event) => {
   createTags(event.target.value);
+
+  if (event.key === "Enter") {
+    setTimeout(() => {
+      event.target.value = "";
+    }, 10);
+
+    randomSelect();
+  }
 });
 
 function createTags(input) {
@@ -19,4 +27,40 @@ function createTags(input) {
     tagEl.innerText = tag;
     tagsEl.appendChild(tagEl);
   });
+}
+
+function randomSelect() {
+  const times = 30;
+
+  //Causes the shifting to each one, highlghting and unhighlighting after a certain amount of time
+  const interval = setInterval(() => {
+    const randomTag = pickRandomTag();
+    highlightTag(randomTag);
+    setTimeout(() => {
+      unHighlightTag(randomTag);
+    }, 100);
+  }, 100);
+
+  //Takes care of stopping it and picking a random tag to land on and highlight
+  setTimeout(() => {
+    clearInterval(interval);
+
+    setTimeout(() => {
+      const randomTag = pickRandomTag();
+      highlightTag(randomTag);
+    }, 100);
+  }, times * 100);
+}
+
+function pickRandomTag() {
+  const tags = document.querySelectorAll(".tag");
+  return tags[Math.floor(Math.random() * tags.length)];
+}
+
+function highlightTag(tag) {
+  tag.classList.add("highlight");
+}
+
+function unHighlightTag(tag) {
+  tag.classList.remove("highlight");
 }
