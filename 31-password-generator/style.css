@@ -32,6 +32,7 @@ h1 {
 }
 .result-container {
   background-color: #fdd2bf;
+  color: #012443;
   display: flex;
   justify-content: flex-start;
   align-items: center;
